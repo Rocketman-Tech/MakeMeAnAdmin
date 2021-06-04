@@ -9,7 +9,7 @@
 #
 # SYNOPSIS
 #	sudo makeMeAnAdmin.sh
-#	sudo makeMeAnAdmin.sh <mountPoint> <computerName> <currentUsername> [time in minutes] 
+#	sudo makeMeAnAdmin.sh <mountPoint> <computerName> <currentUsername> [time in minutes]
 #
 #
 # DESCRIPTION
@@ -38,7 +38,7 @@
 #
 # Future upgrades:
 #	* Add code to verify all components are removed
-#	* Complete code to gather logs and add to fileuploads 
+#	* Complete code to gather logs and add to fileuploads
 #
 ####################################################################################################
 
@@ -130,7 +130,7 @@ echo $currentUser >> /private/var/userToRemove/user
 ## Create the script to demote with the launch daemon
 cat << 'EOF' > /Library/Application\ Support/JAMF/removeAdmin.sh
 if [[ -f /private/var/userToRemove/user ]]; then
-	
+
 	userToRemove=$(cat /private/var/userToRemove/user)
 	/usr/sbin/dseditgroup -o edit -d $userToRemove -t user admin
 
@@ -163,7 +163,7 @@ sudo defaults write /Library/LaunchDaemons/removeAdmin.plist StartInterval -inte
 sudo chown root:wheel /Library/LaunchDaemons/removeAdmin.plist
 sudo chmod 644 /Library/LaunchDaemons/removeAdmin.plist
 
-#Load the daemon 
+#Load the daemon
 launchctl load /Library/LaunchDaemons/removeAdmin.plist
 
 ##
