@@ -18,11 +18,14 @@ I've been using versions of that workflow ever since. This is the script we are 
 ## Usage
 
 Add the script to your Jamf Pro server and label the parameters along the lines of:
-4. Time (in minutes) for admin rights
-5. Ask for a reason (y/n)
-6. API Basic Authentication 'Token'
-7. Upload log to Jamf (y/n)
-8. Remove computer from static group after use?
+
+<ol start=4>
+<li>Time (in minutes) for admin rights
+<li>Ask for a reason (y/n)
+<li>API Basic Authentication 'Token'
+<li>Upload log to Jamf (y/n)
+<li>Remove computer from static group after use?
+</ol>
 
 Then create a policy as usual that runs the script and fill in the parameters as you like.
 
