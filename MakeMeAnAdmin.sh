@@ -1,46 +1,26 @@
 #!/bin/bash
 
-####################################################################################################
-#
-# ABOUT THIS PROGRAM
-#
-# NAME
-#	makeMeAnAdmin.sh -- Grants temporary admin rights to standard users through Self Service
-#
-# SYNOPSIS
-#	sudo makeMeAnAdmin.sh
-#	sudo makeMeAnAdmin.sh <mountPoint> <computerName> <currentUsername> [time in minutes]
-#
-#
-# DESCRIPTION
-#
-#	This script is to be used with a self service policy and grants the user admin rights
-#	for a time (in minutes) specified in $4 through the policy.
-#
-#	This script is based on the one created by Jamf (https://github.com/jamf/MakeMeAnAdmin)
-#
-#
-####################################################################################################
-#
-# HISTORY
-#
-#	Version: 0.1 - Chad Lawson on 11/12/2018
-#	Version: 1.0 - Chad Lawson on 11/11/2020
-#	Version: 2.0a - Chad Lawson on 1/27/2021
-#		Added code to:
-#			* Ask the user why the need it (optional)
-#			* Upload the logs as a file attachment (optional)
-#			* Remove the computer from a static group after running (optional)
-#	Version: 2.1 - Chad Lawson on 3/30/2021
-#		Added block at end to perform 'checkmember' and echo result for verification
-#
-####################################################################################################
-#
-# Future upgrades:
-#	* Add code to verify all components are removed
-#	* Complete code to gather logs and add to fileuploads
-#
-####################################################################################################
+################################################################################
+################################
+##/////////////////////)######## Make Me An Admin
+##|                      )######
+##|                        )#### Grants the active user admin rights temporarily
+##|                         )###
+##|         #######)         )## TYPE: Jamf Policy Script
+##|         ########)        )##
+##|         #######)        )### Parameters:
+##|                         )### $1-3 - Reserved by Jamf
+##|                       )##### $4 - Time (in minutes) for admin rights
+##|                      )###### $5 - Ask for reason (y/n) - uses Applescript
+##|      |  ####\         \##### $6 - API user "hash" (optional)
+##|      |  #####\         \#### $7 - Upload logs to Jamf (y/n)
+##|    | |  ######\         \### $8 - Remove computer from group at run?
+##|  | | |  #######\         \##
+################################ 
+##
+## https://github.com/Rocketman-Tech/MakeMeAnAdmin
+##
+################################################################################
 
 STATUS=0 ## default
 
