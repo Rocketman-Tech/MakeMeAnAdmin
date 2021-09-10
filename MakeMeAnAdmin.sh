@@ -1,24 +1,24 @@
 #!/bin/bash
 
-################################################################################
 ################################
-##/////////////////////)######## Make Me An Admin
+##/////////////////////)########	Make Me An Admin
 ##|                      )######
-##|                        )#### Grants the active user admin rights temporarily
+##|                        )####	Grants the active user temporary admin rights
 ##|                         )###
-##|         #######)         )## TYPE: Jamf Policy Script
+##|         #######)         )##	TYPE: Jamf Policy Script
 ##|         ########)        )##
-##|         #######)        )### Parameters:
-##|                         )### $1-3 - Reserved by Jamf
-##|                       )##### $4 - Time (in minutes) for admin rights
-##|                      )###### $5 - Ask for reason (y/n) - uses Applescript
-##|      |  ####\         \##### $6 - API user "hash" (optional)
-##|      |  #####\         \#### $7 - Upload logs to Jamf (y/n)
-##|    | |  ######\         \### $8 - Remove computer from group at run?
+##|         #######)        )###	Parameters:
+##|                         )###	$1-3 - Reserved by Jamf
+##|                       )#####	$4 - Time (in minutes) for admin rights
+##|                      )######	$5 - Ask for reason (y/n) - uses Applescript
+##|      |  ####\         \#####	$6 - API user "hash" (optional)
+##|      |  #####\         \####	$7 - Upload logs to Jamf (y/n)
+##|    | |  ######\         \###	$8 - Remove computer from group at run?
 ##|  | | |  #######\         \##
 ################################ 
 ##
-## https://github.com/Rocketman-Tech/MakeMeAnAdmin
+## Latest version and additional notes available at our GitHub
+## 	https://github.com/Rocketman-Tech/MakeMeAnAdmin
 ##
 ################################################################################
 
