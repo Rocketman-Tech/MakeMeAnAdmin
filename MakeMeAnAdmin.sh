@@ -1,21 +1,21 @@
 #!/bin/bash
 
 ################################
-##/////////////////////)########	Make Me An Admin
+##/////////////////////)######## Make Me An Admin
 ##|                      )######
-##|                        )####	Grants the active user temporary admin rights
+##|                        )#### Grants the active user temporary admin rights
 ##|                         )###
-##|         #######)         )##	TYPE: Jamf Policy Script
+##|         #######)         )## TYPE: Jamf Policy Script
 ##|         ########)        )##
-##|         #######)        )###	Parameters:
-##|                         )###	$1-3 - Reserved by Jamf
-##|                       )#####	$4 - Time (in minutes) for admin rights
-##|                      )######	$5 - Ask for reason (y/n) - uses Applescript
-##|      |  ####\         \#####	$6 - API user "hash" (optional)
-##|      |  #####\         \####	$7 - Upload logs to Jamf (y/n)
-##|    | |  ######\         \###	$8 - Remove computer from group at run?
+##|         #######)        )### Parameters:
+##|                         )### $1-3 - Reserved by Jamf
+##|                       )##### $4 - Time (in minutes) for admin rights
+##|                      )###### $5 - Ask for reason (y/n) - uses Applescript
+##|      |  ####\         \##### $6 - API user "hash" (optional)
+##|      |  #####\         \#### $7 - Upload logs to Jamf (y/n)
+##|    | |  ######\         \### $8 - Remove computer from group at run?
 ##|  | | |  #######\         \##
-################################ 
+################################
 ##
 ## Latest version and additional notes available at our GitHub
 ## 	https://github.com/Rocketman-Tech/MakeMeAnAdmin
@@ -132,7 +132,7 @@ if [[ ${UPLOADLOG} == "y" ]]; then
 fi
 
 ##
-##Create the plist
+## Create the plist
 ##
 sudo defaults write /Library/LaunchDaemons/removeAdmin.plist Label -string "removeAdmin"
 sudo defaults write /Library/LaunchDaemons/removeAdmin.plist ProgramArguments -array -string /bin/sh -string "/Library/Application Support/JAMF/removeAdmin.sh"
